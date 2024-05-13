@@ -41,16 +41,56 @@ export default {
     '@nuxtjs/vuetify'
   ],
 
+  router: {
+    middleware: ['auth']
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+
+  auth: {
+    redirect: {
+      login: '/login',
+      callback: '/',
+      home: '/'
+    },
+    localStorage: false,
+    resetOnError: true,
+    strategies: {
+      local: {
+        cookie: false,
+        user: {
+          property: 'user'
+        },
+        token: {
+          property: 'token',
+          required: true
+        },
+        endpoints: {
+          login: {
+            url: '/login',
+            method: 'post'
+          },
+          logout: {
+            url: '/logout',
+            method: 'post'
+          },
+          user: false
+        },
+        rewriteRedirects: true,
+        fullPatchRedirect: true
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
+    baseURL: 'http://localhost:5010'
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
