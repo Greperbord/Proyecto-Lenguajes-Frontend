@@ -24,6 +24,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/style.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -41,51 +42,11 @@ export default {
     '@nuxtjs/vuetify'
   ],
 
-  router: {
-    middleware: ['auth']
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/axios'
   ],
-
-  auth: {
-    redirect: {
-      login: '/login',
-      callback: '/',
-      home: '/'
-    },
-    localStorage: false,
-    resetOnError: true,
-    strategies: {
-      local: {
-        cookie: false,
-        user: {
-          property: 'user'
-        },
-        token: {
-          property: 'token',
-          required: true
-        },
-        endpoints: {
-          login: {
-            url: '/login',
-            method: 'post'
-          },
-          logout: {
-            url: '/logout',
-            method: 'post'
-          },
-          user: false
-        },
-        rewriteRedirects: true,
-        fullPatchRedirect: true
-      }
-    }
-  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -97,7 +58,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
