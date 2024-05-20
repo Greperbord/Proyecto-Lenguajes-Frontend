@@ -65,7 +65,7 @@
           Order it for you or for your beloved ones
         </p>
         <div class="products">
-          <a href="/item1" style="text-decoration: none; text-transform: none;">
+          <a href="/item1">
             <div class="product-card">
               <div class="product-background">
                 <img :src="require('/assets/images/product1.svg')">
