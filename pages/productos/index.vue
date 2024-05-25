@@ -68,14 +68,14 @@ export default {
   data () {
     return {
       products: [
-        { id: 1, name: 'Spiced Mint', price: '9.99$', image: 'p1.png' },
-        { id: 2, name: 'Sweet Strawberry', price: '9.99$', image: 'p2.png' },
-        { id: 3, name: 'Cool Blueberries', price: '9.99$', image: 'p3.png' },
-        { id: 4, name: 'Juicy Lemon', price: '9.99$', image: 'p4.png' },
-        { id: 5, name: 'Fresh Orange', price: '9.99$', image: 'p5.png' },
-        { id: 6, name: 'Fragrant Cinnamon', price: '9.99$', image: 'p6.png' },
-        { id: 7, name: 'Summer Cherries', price: '9.99$', image: 'p7.png' },
-        { id: 8, name: 'Clean Lavender', price: '9.99$', image: 'p8.png' }
+        { id: 1, name: 'Spiced Mint', price: '$9.99', image: 'p1.png' },
+        { id: 2, name: 'Sweet Strawberry', price: '$9.99', image: 'p2.png' },
+        { id: 3, name: 'Cool Blueberries', price: '$9.99', image: 'p3.png' },
+        { id: 4, name: 'Juicy Lemon', price: '$9.99', image: 'p4.png' },
+        { id: 5, name: 'Fresh Orange', price: '$9.99', image: 'p5.png' },
+        { id: 6, name: 'Fragrant Cinnamon', price: '$9.99', image: 'p6.png' },
+        { id: 7, name: 'Summer Cherries', price: '$9.99', image: 'p7.png' },
+        { id: 8, name: 'Clean Lavender', price: '$9.99', image: 'p8.png' }
       ]
     }
   },

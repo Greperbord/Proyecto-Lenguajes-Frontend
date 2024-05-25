@@ -32,7 +32,6 @@
     <v-main class="grey lighten-2">
       <div style="background-color: aqua;">
         <v-img :src="require('@/assets/images/fondo.svg')">
-<<<<<<< HEAD
           <v-card color="#F7F8FACC" style="width: 500px; height: 220px; margin-top: 220px; margin-left: 350px; border-radius: 2px;" align="center">
             <v-title>
               <h1>🌱</h1>
@@ -51,32 +50,6 @@
               </router-link>
             </v-card-actions>
           </v-card>
-=======
-          <div style="margin-top: 20%; margin-left: 33%;">
-            <v-card color="#F7F8FACC" max-width="500" align="center">
-              <v-title>
-                <h1>🌱</h1>
-              </v-title>
-              <v-card-subtitle>
-                <h1 class="black--text">
-                  The nature candle
-                </h1>
-              </v-card-subtitle>
-              <v-card-text>
-                <h3 class="black--text">
-                  All handmade with natural soy wax, Candleaf is a companion for all your pleasure moments.
-                </h3>
-              </v-card-text>
-              <v-card-actions>
-                <v-col>
-                  <a href="">
-                    <v-img :src="require('@/assets/images/botonxd.svg')" />
-                  </a>
-                </v-col>
-              </v-card-actions>
-            </v-card>
-          </div>
->>>>>>> ba72bb94d5fca9c7e7fe4a6e5806ba5b5e5bc17e
         </v-img>
       </div>
 
