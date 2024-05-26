@@ -81,9 +81,11 @@
                   <v-col cols="6">
                     <div style="display: flex; flex-direction: column; align-items: flex-start;">
                       <v-card color="#F7F8FA" style="height: 350px;">
-                        <v-checkbox v-model="readonly" label="One time purchase" />
-                        <v-checkbox v-model="readonly" label="Subscribe and delivery every" />
-                        <v-expansion-panels style="color: #E7E7E7;">
+                        <v-radio-group v-model="selectedOption">
+                          <v-radio label="One time purchase" value="one_time" />
+                          <v-radio label="Subscribe and delivery every" value="subscribe" />
+                        </v-radio-group>
+                        <v-expansion-panels v-if="selectedOption === 'subscribe'" style="color: #E7E7E7;">
                           <v-expansion-panel>
                             <v-expansion-panel-header>
                               4 weeks
@@ -119,7 +121,7 @@
               <v-row justify="center" color="#F7F8FA">
                 <v-card style="width: 400px;">
                   <h1 class="small-s-heading" style="text-align: center;">
-                    Wax: Top grade Soy wax that delivers a smoke less,  consistent burn
+                    Wax: Top grade Soy wax that delivers a smoke less, consistent burn
                   </h1>
                   <h1 class="small-s-heading" style="text-align: center;">
                     Fragrance: Premium quality ingredients with natural essential oils
@@ -149,16 +151,16 @@ export default {
     return {
       product: {},
       cantidad: 1,
-      readonly: false,
+      selectedOption: 'one_time', // to keep track of the selected option
       products: [
-        { id: 1, name: 'Spiced Mint', price: '9.99$', image: 'p1.png', description: 'A refreshing blend of mint and spices.' },
-        { id: 2, name: 'Sweet Strawberry', price: '9.99$', image: 'p2.png', description: 'A delightful product.' },
-        { id: 3, name: 'Cool Blueberries', price: '9.99$', image: 'p3.png', description: 'An amazing product.' },
-        { id: 4, name: 'Juicy Lemon', price: '9.99$', image: 'p4.png', description: 'A fantastic product.' },
-        { id: 5, name: 'Fresh Orange', price: '9.99$', image: 'p5.png', description: 'A wonderful product.' },
-        { id: 6, name: 'Fragrant Cinnamon', price: '9.99$', image: 'p6.png', description: 'A great product.' },
-        { id: 7, name: 'Summer Cherries', price: '9.99$', image: 'p7.png', description: 'A superb product.' },
-        { id: 8, name: 'Clean Lavender', price: '9.99$', image: 'p8.png', description: 'A fantastic product.' }
+        { id: 1, name: 'Spiced Mint', price: '$9.99', image: 'p1.png', description: 'A refreshing blend of mint and spices.' },
+        { id: 2, name: 'Sweet Strawberry', price: '$9.99', image: 'p2.png', description: 'A delightful product.' },
+        { id: 3, name: 'Cool Blueberries', price: '$9.99', image: 'p3.png', description: 'An amazing product.' },
+        { id: 4, name: 'Juicy Lemon', price: '$9.99', image: 'p4.png', description: 'A fantastic product.' },
+        { id: 5, name: 'Fresh Orange', price: '$9.99', image: 'p5.png', description: 'A wonderful product.' },
+        { id: 6, name: 'Fragrant Cinnamon', price: '$9.99', image: 'p6.png', description: 'A great product.' },
+        { id: 7, name: 'Summer Cherries', price: '$9.99', image: 'p7.png', description: 'A superb product.' },
+        { id: 8, name: 'Clean Lavender', price: '$9.99', image: 'p8.png', description: 'A fantastic product.' }
       ]
     }
   },
