@@ -128,6 +128,51 @@
           </v-col>
         </v-row>
       </v-container>
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <hr>
+          <div class="footer-content">
+            <div>
+              <img :src="require('/assets/images/candleaf_white.svg')">
+              <p style="color: white;">
+                Your natural candle made for your home and for your wellness.
+              </p>
+            </div>
+            <div class="footer-links">
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  Discovery
+                </h3>
+                <div class="links">
+                  <a href="/new" style="color: white; text-decoration: none;">New season</a>
+                  <a href="/searched" style="color: white; text-decoration: none;">Most searched</a>
+                  <a href="/selled" style="color: white; text-decoration: none;">Most selled</a>
+                </div>
+              </div>
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  About
+                </h3>
+                <div class="links">
+                  <a href="/help" style="color: white; text-decoration: none;">Help</a>
+                  <a href="/ship" style="color: white; text-decoration: none;">Shipping</a>
+                  <a href="/afillate" style="color: white; text-decoration: none;">Affiliate</a>
+                </div>
+              </div>
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  Info
+                </h3>
+                <div class="links">
+                  <a href="/contact" style="color: white; text-decoration: none;">Contact us</a>
+                  <a href="/privacy" style="color: white; text-decoration: none;">Privacy Policies</a>
+                  <a href="/terms" style="color: white; text-decoration: none;">Terms &amp; Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </v-main>
   </v-app>
 </template>

@@ -60,95 +60,27 @@
         <p style="color: #5E6E89;">
           Order it for you or for your beloved ones
         </p>
-        <div class="products">
-          <a href="/item1">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product1.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Spiced Mint</h4>
-                <p>$12.56</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item2">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product2.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Sweet Strawberry</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item3">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product3.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Cool Blueberris</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item4">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product4.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Juicy Lemon</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item5">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product5.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Stary Golden</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item6">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product6.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Fragrant Cinnamon</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item7">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product7.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Summer Cherrys</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item8">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product8.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Clean Lavander</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
+        <div>
+          <v-row v-for="(productRow, rowIndex) in productRows" :key="rowIndex">
+            <v-col v-for="product in productRow" :key="product.id" cols="12" sm="6" md="3">
+              <router-link :to="`/productos/${product.id}`">
+                <v-card color="#F7F8FA" class="cursor-pointer">
+                  <v-img :src="require(`@/assets/images/${product.image}`)" />
+                  <v-card-subtitle>
+                    <h1 class="small-heading" style="color: #1D293F; text-align: center;">
+                      {{ product.name }}
+                    </h1>
+                  </v-card-subtitle>
+                  <v-card-actions>
+                    <v-spacer />
+                    <span class="small-heading" style="color: #56B280;">
+                      {{ product.price }}
+                    </span>
+                  </v-card-actions>
+                </v-card>
+              </router-link>
+            </v-col>
+          </v-row>
         </div>
       </div>
 
@@ -237,51 +169,27 @@
       <div class="popular-product">
         <h3>Popular</h3>
         <p>Our top selling product that you may like</p>
-        <div class="products" style="">
-          <a href="/item1">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product1.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Spiced Mint</h4>
-                <p>$12.56</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item2">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product2.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Sweet Strawberry</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item3">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product3.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Cool Blueberris</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
-          <a href="/item4">
-            <div class="product-card">
-              <div class="product-background">
-                <img :src="require('/assets/images/product4.svg')">
-              </div>
-              <div class="product-card-footer">
-                <h4>Juicy Lemon</h4>
-                <p>$9.99</p>
-              </div>
-            </div>
-          </a>
+        <div>
+          <v-row v-for="(productRow, rowIndex) in topProducts" :key="rowIndex">
+            <v-col v-for="product in productRow" :key="product.id" cols="12" sm="6" md="3">
+              <router-link :to="`/productos/${product.id}`">
+                <v-card color="#F7F8FA" class="cursor-pointer">
+                  <v-img :src="require(`@/assets/images/${product.image}`)" />
+                  <v-card-subtitle>
+                    <h1 class="small-heading" style="color: #1D293F; text-align: center;">
+                      {{ product.name }}
+                    </h1>
+                  </v-card-subtitle>
+                  <v-card-actions>
+                    <v-spacer />
+                    <span class="small-heading" style="color: #56B280;">
+                      {{ product.price }}
+                    </span>
+                  </v-card-actions>
+                </v-card>
+              </router-link>
+            </v-col>
+          </v-row>
         </div>
       </div>
 
@@ -337,122 +245,36 @@
 <script>
 export default {
   name: 'IndexPage',
+  data () {
+    return {
+      products: [
+        { id: 1, name: 'Spiced Mint', price: '$9.99', image: 'p1.png' },
+        { id: 2, name: 'Sweet Strawberry', price: '$9.99', image: 'p2.png' },
+        { id: 3, name: 'Cool Blueberries', price: '$9.99', image: 'p3.png' },
+        { id: 4, name: 'Juicy Lemon', price: '$9.99', image: 'p4.png' },
+        { id: 5, name: 'Fresh Orange', price: '$9.99', image: 'p5.png' },
+        { id: 6, name: 'Fragrant Cinnamon', price: '$9.99', image: 'p6.png' },
+        { id: 7, name: 'Summer Cherries', price: '$9.99', image: 'p7.png' },
+        { id: 8, name: 'Clean Lavender', price: '$9.99', image: 'p8.png' }
+      ]
+    }
+  },
+  computed: {
+    productRows () {
+      const rows = []
+      for (let i = 0; i < this.products.length; i += 4) {
+        rows.push(this.products.slice(i, i + 4))
+      }
+      return rows
+    },
+    topProducts () {
+      const rows = []
+      for (let i = 0; i < this.products.length; i += 8) {
+        rows.push(this.products.slice(i, i + 4))
+      }
+      return rows
+    }
+  },
   auth: false
 }
 </script>
-
-<style scoped>
-.products {
-  margin-left: 130px;
-  grid-gap: 18px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 80%;
-}
-
-.product-card {
-  border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    height: 230px;
-    transition: all .3s ease-in-out;
-}
-
-.product-background {
-    background-color: #f7f8fa;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 152px;
-    margin-bottom: 0;
-    width: 100%;
-}
-
-.product-card-footer {
-    background-color: #fff;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    height: 76px;
-}
-.learn-more {
-    background-color:#56B280;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #fff;
-    margin-top: 10px;
-    padding: 8px 44px;
-}
-.testimonial {
-    margin: 45px auto;
-    text-align: center;
-    width: 85%;
-    align-items: center;
-}
-.testimonials {
-    grid-gap: 18px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-bottom: 35px;
-    margin-top: 35px;
-}
-.testimonial-card {
-    align-items: center;
-    background-color: #fff;
-    border-radius: 6px;
-    display: flex;
-    height: 380px;
-    justify-content: center;
-}
-.avatar {
-  width: 250px;
-  height: 220px;
-  top: 10px;
-  opacity: 0px;
-  margin-top: -100px;
-  margin-left: 20px;
-}
-.star {
-  width: 145.95px;
-  height: 24px;
-  top: 131px;
-  left: 102px;
-  gap: 0px;
-  opacity: 0px;
-}
-.popular-product {
-    margin: 45px auto;
-    text-align: center;
-    align-items: center;
-    background-color: white;
-}
-.footer {
-  align-items: center;
-  background-color: black;
-  display: flex;
-  height: auto;
-  justify-content: center;
-}
-.footer-wrapper {
-  margin: 45px auto;
-  width: 85%;
-}
-.footer-content {
-  display: block;
-}
-.footer-links {
-    display: flex;
-    flex: 1 1;
-    gap: 35px;
-    justify-content: flex-end;
-}
-.links-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-</style>
