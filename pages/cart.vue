@@ -30,10 +30,10 @@
     </v-app-bar>
 
     <v-main class="grey lighten-2">
-      <v-container style="position: relative; top: 100px;">
+      <v-container class="cart-container">
         <v-row>
           <v-col cols="12">
-            <v-card>
+            <v-card class="cart-card">
               <h1 class="medium-m-heading" style="text-align: center;">
                 Your cart items
               </h1>
@@ -46,22 +46,22 @@
                 <div>
                   <v-row>
                     <v-col cols="3">
-                      <p style="color: #272727;">
+                      <p style="color: #272727;" class="medium-heading">
                         Product
                       </p>
                     </v-col>
-                    <v-col cols="3">
+                    <v-col cols="3" class="medium-heading">
                       <p style="color: #272727;">
                         Price
                       </p>
                     </v-col>
-                    <v-col cols="3">
+                    <v-col cols="3" class="medium-heading">
                       <p style="color: #272727">
                         Quantity
                       </p>
                     </v-col>
                     <v-col cols="3">
-                      <p style="color: #272727;">
+                      <p style="color: #272727;" class="medium-heading">
                         Total:
                       </p>
                     </v-col>
@@ -79,26 +79,26 @@
                         <v-img :src="require(`@/assets/images/${item.image}`)" />
                       </v-col>
                       <v-col cols="3">
-                        <p>{{ item.price }}</p>
-                      </v-col>
-                      <v-col cols="3">
-                        <v-btn elevation="2" x-small @click="diminuirCantidad(item.productId)">
-                          <v-icon>
-                            mdi-minus
-                          </v-icon>
-                        </v-btn>
-                        <p style="margin: 0 10px; color: #272727;">
-                          {{ item.cantidad }}
+                        <p style="color: #272727;" class="small-heading ">
+                          {{ item.price }}
                         </p>
-                        <v-btn elevation="2" x-small @click="aumentarCantidad(item.productId)">
-                          <v-icon>
-                            mdi-plus
-                          </v-icon>
-                        </v-btn>
                       </v-col>
                       <v-col cols="3">
-                        <p style="color: #272727;">
-                          {{ totalPrice }}
+                        <div class="quantity-container">
+                          <v-btn style="color: #56B280;" class="quantity-btn" @click="diminuirCantidad(item.productId)">
+                            -
+                          </v-btn>
+                          <p class="quantity-value">
+                            {{ item.cantidad }}
+                          </p>
+                          <v-btn style="color: #56B280;" class="quantity-btn" @click="aumentarCantidad(item.productId)">
+                            +
+                          </v-btn>
+                        </div>
+                      </v-col>
+                      <v-col cols="3">
+                        <p style="color: #272727;" class="small-heading ">
+                          {{ (item.cantidad * parseFloat(item.price.replace('$', ''))).toFixed(2) }}
                         </p>
                       </v-col>
                     </v-row>
@@ -107,19 +107,21 @@
                   <v-row>
                     <v-col cols="6">
                       <p style="color: black;">
-                        Subtotal:
+                        Sub-total:
                       </p>
                       <p style="color: #56B280;">
                         {{ totalPrice }}
                       </p>
-                      <p>
+                      <p class="small-heading" style="color: #272727;">
                         Tax and shipping cost will be calculated later
                       </p>
                     </v-col>
                     <v-col cols="6" class="text-right">
-                      <v-btn color="#56B280" style="color: white;">
-                        Check-Out
-                      </v-btn>
+                      <router-link to="/details">
+                        <v-btn color="#56B280" style="color: white;">
+                          Check-out
+                        </v-btn>
+                      </router-link>
                     </v-col>
                   </v-row>
                 </div>

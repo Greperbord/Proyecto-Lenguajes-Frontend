@@ -1,5 +1,5 @@
 .small-heading {
-  font-size: 1rem; /* Tamaño de letra más pequeño */
+  font-size: 1rem;
 }
 
 .cursor-pointer {
@@ -54,6 +54,7 @@
     border-bottom-right-radius: 5px;
     height: 76px;
 }
+
 .learn-more {
     background-color:#56B280;
     border: 1px solid transparent;
@@ -62,12 +63,14 @@
     margin-top: 10px;
     padding: 8px 44px;
 }
+
 .testimonial {
     margin: 45px auto;
     text-align: center;
     width: 85%;
     align-items: center;
 }
+
 .testimonials {
     grid-gap: 18px;
     display: grid;
@@ -75,6 +78,7 @@
     margin-bottom: 35px;
     margin-top: 35px;
 }
+
 .testimonial-card {
     align-items: center;
     background-color: #fff;
@@ -83,6 +87,7 @@
     height: 380px;
     justify-content: center;
 }
+
 .avatar {
   width: 250px;
   height: 220px;
@@ -91,6 +96,7 @@
   margin-top: -100px;
   margin-left: 20px;
 }
+
 .star {
   width: 145.95px;
   height: 24px;
@@ -99,38 +105,112 @@
   gap: 0px;
   opacity: 0px;
 }
+
 .popular-product {
     margin: 45px auto;
     text-align: center;
     align-items: center;
     background-color: white;
 }
+
 .footer {
   align-items: center;
   background-color: black;
   display: flex;
   height: auto;
   justify-content: center;
+  padding: 40px 0;
 }
+
 .footer-wrapper {
-  margin: 45px auto;
   width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 .footer-content {
   display: block;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+
 .footer-links {
     display: flex;
     flex: 1 1;
     gap: 35px;
     justify-content: flex-end;
 }
+
 .links-wrapper {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
+
 .links {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.links a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-space {
+  margin-top: 150px;
+}
+
+.footer-content img {
+  max-width: 150px;
+}
+
+ .cart-container {
+  padding-bottom: 50px;
+}
+
+.cart-card {
+  padding: 20px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #56B280;
+  padding: 5px;
+  border-radius: 5px;
+  justify-content: space-around;
+}
+
+.quantity-btn {
+  min-width: 30px;
+  max-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #56B280;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.quantity-value {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #272727;
+}
+
+.footer-space {
+  height: 50px;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
 }

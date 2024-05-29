@@ -58,22 +58,16 @@
                 <v-row>
                   <v-col cols="6">
                     <div style="display: flex; flex-direction: column; align-items: left;">
-                      <p class="small-heading" style="margin-bottom: 5px;">
+                      <p class="small-heading" style="margin-bottom: 5px; color: #272727;">
                         Quantity
                       </p>
-                      <div style="display: flex; justify-content: center; align-items: center;">
-                        <v-btn elevation="2" x-small @click="diminuirCantidad">
-                          <v-icon>
-                            mdi-minus
-                          </v-icon>
+                      <div>
+                        <v-btn class="quantity-container" elevation="2" style="color: #56B280;" @click="diminuirCantidad">
+                          -
                         </v-btn>
-                        <p style="margin: 0 10px;">
-                          {{ cantidad }}
-                        </p>
-                        <v-btn elevation="2" x-small @click="aumentarCantidad">
-                          <v-icon>
-                            mdi-plus
-                          </v-icon>
+                        <span class="quantity-value">{{ cantidad }}</span>
+                        <v-btn class="quantity-container" elevation="2" style="color: #56B280;" @click="aumentarCantidad">
+                          +
                         </v-btn>
                       </div>
                     </div>
@@ -141,6 +135,7 @@
           </v-col>
         </v-row>
       </v-container>
+      <div style="margin-top: 50px;" />
       <footer class="footer">
         <div class="footer-wrapper">
           <hr>
@@ -196,7 +191,7 @@ export default {
     return {
       product: {},
       cantidad: 1,
-      selectedOption: 'one_time', // to keep track of the selected option
+      selectedOption: 'one_time',
       products: [
         { id: 1, name: 'Spiced Mint', price: '$9.99', image: 'p1.png', description: 'A refreshing blend of mint and spices.' },
         { id: 2, name: 'Sweet Strawberry', price: '$9.99', image: 'p2.png', description: 'A delightful product.' },
