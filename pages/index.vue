@@ -61,7 +61,7 @@
           Order it for you or for your beloved ones
         </p>
         <div class="products">
-          <a href="/item1">
+          <a href="`/productos/${product.id}`">
             <div class="product-card">
               <div class="product-background">
                 <img :src="require('/assets/images/product1.svg')">
