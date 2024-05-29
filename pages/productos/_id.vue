@@ -3,7 +3,7 @@
     <v-app-bar app color="white">
       <v-container>
         <v-row>
-          <a href="/">
+          <a href="/inicio">
             <v-img :src="require('@/assets/images/logo.svg')" />
           </a>
         </v-row>
@@ -58,22 +58,16 @@
                 <v-row>
                   <v-col cols="6">
                     <div style="display: flex; flex-direction: column; align-items: left;">
-                      <p class="small-heading" style="margin-bottom: 5px;">
+                      <p class="small-heading" style="margin-bottom: 5px; color: #272727;">
                         Quantity
                       </p>
-                      <div style="display: flex; justify-content: center; align-items: center;">
-                        <v-btn elevation="2" x-small @click="diminuirCantidad">
-                          <v-icon>
-                            mdi-minus
-                          </v-icon>
+                      <div>
+                        <v-btn class="quantity-container" elevation="2" style="color: #56B280;" @click="diminuirCantidad">
+                          -
                         </v-btn>
-                        <p style="margin: 0 10px;">
-                          {{ cantidad }}
-                        </p>
-                        <v-btn elevation="2" x-small @click="aumentarCantidad">
-                          <v-icon>
-                            mdi-plus
-                          </v-icon>
+                        <span class="quantity-value">{{ cantidad }}</span>
+                        <v-btn class="quantity-container" elevation="2" style="color: #56B280;" @click="aumentarCantidad">
+                          +
                         </v-btn>
                       </div>
                     </div>
@@ -119,7 +113,7 @@
                 </v-row>
               </v-card-text>
               <v-row justify="center" color="#F7F8FA">
-                <v-card style="width: 400px;">
+                <v-card style="width: 400px;" elevation="0" color="#F7F8FA">
                   <h1 class="small-s-heading" style="text-align: center;">
                     Wax: Top grade Soy wax that delivers a smoke less, consistent burn
                   </h1>
@@ -141,6 +135,52 @@
           </v-col>
         </v-row>
       </v-container>
+      <div style="margin-top: 50px;" />
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <hr>
+          <div class="footer-content">
+            <div>
+              <img :src="require('/assets/images/candleaf_white.svg')">
+              <p style="color: white;">
+                Your natural candle made for your home and for your wellness.
+              </p>
+            </div>
+            <div class="footer-links">
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  Discovery
+                </h3>
+                <div class="links">
+                  <a href="/new" style="color: white; text-decoration: none;">New season</a>
+                  <a href="/searched" style="color: white; text-decoration: none;">Most searched</a>
+                  <a href="/selled" style="color: white; text-decoration: none;">Most selled</a>
+                </div>
+              </div>
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  About
+                </h3>
+                <div class="links">
+                  <a href="/help" style="color: white; text-decoration: none;">Help</a>
+                  <a href="/ship" style="color: white; text-decoration: none;">Shipping</a>
+                  <a href="/afillate" style="color: white; text-decoration: none;">Affiliate</a>
+                </div>
+              </div>
+              <div class="links-wrapper">
+                <h3 style="color: #56B280">
+                  Info
+                </h3>
+                <div class="links">
+                  <a href="/contact" style="color: white; text-decoration: none;">Contact us</a>
+                  <a href="/privacy" style="color: white; text-decoration: none;">Privacy Policies</a>
+                  <a href="/terms" style="color: white; text-decoration: none;">Terms &amp; Conditions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </v-main>
   </v-app>
 </template>
@@ -151,7 +191,7 @@ export default {
     return {
       product: {},
       cantidad: 1,
-      selectedOption: 'one_time', // to keep track of the selected option
+      selectedOption: 'one_time',
       products: [
         { id: 1, name: 'Spiced Mint', price: '$9.99', image: 'p1.png', description: 'A refreshing blend of mint and spices.' },
         { id: 2, name: 'Sweet Strawberry', price: '$9.99', image: 'p2.png', description: 'A delightful product.' },
