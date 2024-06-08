@@ -11,10 +11,10 @@
     </v-app-bar>
 
     <v-main class="grey lighten-2">
-      <v-container style="position: relative; top: 100px;">
-        <v-row>
+      <v-container style="position: relative; top: 50px;">
+        <v-row class="d-flex align-stretch">
           <v-col cols="8">
-            <v-card>
+            <v-card style="max-height: 530px;">
               <v-card-title>
                 <h1 class="medium-m-heading" style="text-align: center;">
                   Shipping Address
@@ -94,8 +94,7 @@
                 <v-btn outlined color="#56B280">
                   Add code
                 </v-btn>
-                <v-divider />
-                <v-row>
+                <v-row style="margin-top: 10px;">
                   <v-col cols="6">
                     <p>Subtotal</p>
                   </v-col>

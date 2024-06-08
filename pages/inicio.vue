@@ -20,7 +20,7 @@
       <v-container>
         <v-row>
           <a style="position: absolute; right: 70px;" href="/">
-            <v-img :src="require('@/assets/images/account.svg')" />
+            <v-icon>mdi-logout</v-icon>
           </a>
           <a style="position: absolute; right: 20px;" href="/cart">
             <v-img :src="require('@/assets/images/cart.svg')" />
@@ -31,8 +31,8 @@
 
     <v-main class="grey lighten-2">
       <div style="background-color: aqua; display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <v-img :src="require('@/assets/images/fondo.svg')">
-          <v-card color="#F7F8FACC" style="width: 500px; height: 220px; margin-top: 220px; margin-left: 350px; border-radius: 2px;" align="center">
+        <v-img :src="require('@/assets/images/fondo.svg')" style="position: relative;">
+          <v-card color="#F7F8FACC" style="width: 500px; height: 220px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 2px;" align="center">
             <v-title>
               <h1>🌱</h1>
             </v-title>

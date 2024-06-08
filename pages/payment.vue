@@ -11,7 +11,7 @@
     </v-app-bar>
 
     <v-main class="grey lighten-2">
-      <v-container style="position: relative; top: 100px;">
+      <v-container style="position: relative; top: 0px;">
         <v-row>
           <v-col cols="8">
             <v-card>
@@ -23,13 +23,6 @@
               <v-card-text>
                 <v-form>
                   <v-row>
-                    <v-col cols="12">
-                      <v-text-field
-                        v-model="contact"
-                        label="Contact"
-                        readonly
-                      />
-                    </v-col>
                     <v-col cols="12">
                       <v-text-field
                         v-model="shippingAddress"
@@ -210,7 +203,6 @@ export default {
   data () {
     return {
       cart: [],
-      contact: 'zzz',
       shippingAddress: '',
       shippingMethod: 'Standard',
       selectedOption: null

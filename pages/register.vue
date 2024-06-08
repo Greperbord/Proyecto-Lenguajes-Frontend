@@ -4,7 +4,7 @@
       <v-img :src="require('@/assets/images/fondo1.jpg')">
         <div class="d-flex justify-center align-center" style="height: 100vh;">
           <div class="col-6 col-md-5" style="margin-top: 100px;">
-            <v-card rounded :color="'rgba(255, 255, 255, 0.9)'" style="height: 50%!important;" elevation="0" max-width="600">
+            <v-card rounded :color="'rgba(255, 255, 255, 0.9)'" style="height: 50%!important;" elevation="0" max-width="520">
               <v-row style="max-height: 30px; max-width: 500px">
                 <v-col>
                   <span style="font-size: 15px !important;">NOMBRE*</span>
@@ -31,18 +31,6 @@
                   <v-row class="ma-2">
                     <v-text-field
                       v-model="telefono"
-                      rounded
-                      outlined
-                    />
-                  </v-row>
-                </v-col>
-              </v-row>
-              <v-row style="max-height: 30px; max-width: 500px; margin-top: 80px !important;">
-                <v-col>
-                  <label style="font-size: 15px !important;">EDAD*</label>
-                  <v-row class="ma-2">
-                    <v-text-field
-                      v-model="edad"
                       rounded
                       outlined
                     />
@@ -108,8 +96,7 @@ export default {
       password: null,
       nombre: null,
       apellido: null,
-      telefono: null,
-      edad: null
+      telefono: null
     }
   },
   methods: {
@@ -120,8 +107,7 @@ export default {
         password: this.password,
         nombre: this.nombre,
         apellido: this.apellido,
-        telefono: this.telefono,
-        edad: this.edad
+        telefono: this.telefono
       }
       this.$axios.post(url, data).then((res) => {
         console.log('@@@ res => ', res)

@@ -93,7 +93,7 @@ export default {
         const result = await res.data
         if (result.message === 'success') {
           this.$store.commit('setToken', result.token)
-          this.$router.push('/principal')
+          this.$router.push('/inicio')
         }
       }).catch((err) => {
         console.log('@@@ error => ', err)

@@ -20,7 +20,7 @@
       <v-container>
         <v-row>
           <a style="position: absolute; right: 70px;" href="/">
-            <v-img :src="require('@/assets/images/account.svg')" />
+            <v-icon>mdi-logout</v-icon>
           </a>
           <a style="position: absolute; right: 20px;" href="/cart">
             <v-img :src="require('@/assets/images/cart.svg')" />

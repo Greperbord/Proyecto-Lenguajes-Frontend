@@ -11,7 +11,7 @@
     </v-app-bar>
 
     <v-main class="grey lighten-2">
-      <v-container style="position: relative; top: 100px;">
+      <v-container style="position: relative; top: 50px;">
         <v-row>
           <v-col cols="8">
             <v-card>
@@ -31,7 +31,6 @@
                       />
                     </v-col>
                   </v-row>
-                  <v-divider />
                   <v-row>
                     <v-col cols="12">
                       <h2>Shipping method</h2>
@@ -77,8 +76,7 @@
                 <v-btn outlined color="#56B280">
                   Add code
                 </v-btn>
-                <v-divider />
-                <v-row>
+                <v-row style="margin-top: 10px;">
                   <v-col cols="6">
                     <p>Subtotal</p>
                   </v-col>

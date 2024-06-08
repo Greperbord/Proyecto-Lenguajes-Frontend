@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - frontend',
-    title: 'frontend',
+    titleTemplate: '%s - Proyecto-Lenguajes-Frontend',
+    title: 'Proyecto-Lenguajes-Frontend',
     htmlAttrs: {
       lang: 'en'
     },
@@ -42,11 +42,51 @@ export default {
     '@nuxtjs/vuetify'
   ],
 
+  router: {
+    middleware: ['auth']
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+
+  auth: {
+    redirect: {
+      login: '/',
+      callback: '/',
+      home: '/'
+    },
+    localStorage: false,
+    resetOnError: true,
+    strategies: {
+      local: {
+        cookie: false,
+        user: {
+          property: 'user'
+        },
+        token: {
+          property: 'token',
+          required: true
+        },
+        endpoints: {
+          login: {
+            url: '/login',
+            method: 'post'
+          },
+          logout: {
+            url: '/logout',
+            method: 'post'
+          },
+          user: false
+        },
+        rewriteRedirects: true,
+        fullPatchRedirect: true
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
